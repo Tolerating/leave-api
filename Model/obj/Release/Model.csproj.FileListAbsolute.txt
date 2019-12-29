@@ -1,0 +1,11 @@
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\Model\bin\Release\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\Model\bin\Release\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\Model\obj\Release\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\Model\obj\Release\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\Model\bin\Release\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\Model\bin\Release\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\Model\obj\Release\Model.csprojAssemblyReference.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\Model\obj\Release\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\Model\obj\Release\Model.pdb

@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>leaveAPI</name>
+    </assembly>
+    <members>
+        <member name="T:leaveAPI.ControllerGroupAttribute">
+            
+             Controller描述信息 ///
+        </member>
+        <member name="P:leaveAPI.ControllerGroupAttribute.GroupName">
+            
+             当前Controller所属模块 请用中文 
+        </member>
+        <member name="M:leaveAPI.ControllerGroupAttribute.#ctor(System.String)">
+             当前controller用途 请用中文 ///
+            public string Useage { get; private set; } 
+            Controller描述信息 构造 ///
+            模块名称 /// 当前controller用途 
+        </member>
+        <member name="T:leaveAPI.SwaggerControllerDescProvider">
+            <summary>
+            显示swagger控制器的描述
+            </summary>
+        </member>
+        <member name="M:leaveAPI.SwaggerControllerDescProvider.#ctor(Swashbuckle.Swagger.ISwaggerProvider,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="swaggerProvider"></param>
+            <param name="xml">xml文档路径</param>
+        </member>
+        <member name="M:leaveAPI.SwaggerControllerDescProvider.GetControllerDesc">
+            <summary>
+            从API文档中读取控制器描述
+            </summary>
+            <returns>所有控制器描述</returns>
+        </member>
+        <member name="M:leaveAPI.Content.JwtTool.EncodeJwt(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="payload"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Content.JwtTool.DecodeJwt(System.String,System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="token"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.LoginModuleController.loginLeave(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            学生登录
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.LoginModuleController.TeacherLogin(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            教师登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.LoginModuleController.upStuPwd(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            学生更新密码
+            </summary>
+            <param name="ID">学号</param>
+            <param name="passnew">新密码</param>
+            <param name="Post">身份</param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.LoginModuleController.sendSMS(System.String,System.String)">
+            <summary>
+            发送验证码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.LoginModuleController.getTeacherInfo(System.String)">
+            <summary>
+            获取教师信息
+            </summary>
+            <param name="ID"></param>
+            <param name="Post"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.LoginModuleController.updateTeaPwd(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            更新教师密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.LoginModuleController.MD5ToString(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="argString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.GetStudentInfo(System.String)">
+            <summary>
+            获取学生信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.getClassInfo(System.String)">
+            <summary>
+            获取班级信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.headTeacherTel(System.String)">
+            <summary>
+            获取班主任电话
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.updateStuTel(System.String,System.String)">
+            <summary>
+            更新学生的电话号码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.updateStuPwd(System.String,System.String)">
+            <summary>
+            更新学生密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.selectAudit">
+            <summary>
+            待审核请假
+            </summary>
+            <param name="StudentID">学生ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.getAuitNum">
+            <summary>
+            获取待审核请假条数
+            </summary>
+            <param name="StudentID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.selectLeaveCount">
+            <summary>
+            获取各请假数目
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.lessonLeaveRecord">
+            <summary>
+            上课请假记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.retrievalLesson(System.String,System.String,System.String,System.String)">
+            <summary>
+            通过时间检索上课请假记录
+            </summary>
+            <param name="StudentID"></param>
+            <param name="stime"></param>
+            <param name="etime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.notSleepRecord">
+            <summary>
+            不留宿请假记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.retrievalNotSleep(System.String,System.String,System.String,System.String)">
+            <summary>
+            通过时间检索不留宿请假记录
+            </summary>
+            <param name="StudentID"></param>
+            <param name="stime"></param>
+            <param name="etime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.zaozixiRecord">
+            <summary>
+            早自习请假记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.retrievalZZX(System.String,System.String,System.String,System.String)">
+            <summary>
+            通过时间检索早自习请假记录
+            </summary>
+            <param name="StudentID"></param>
+            <param name="stime"></param>
+            <param name="etime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.weekdaysRecord">
+            <summary>
+            周末请假记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.retrievalWeek(System.String,System.String,System.String,System.String)">
+            <summary>
+            通过时间检索周末请假记录
+            </summary>
+            <param name="StudentID"></param>
+            <param name="stime"></param>
+            <param name="etime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.advanceDelyRecord">
+            <summary>
+            早出晚归请假记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.retrievalAdDely(System.String,System.String,System.String)">
+            <summary>
+            通过时间检索早出晚归请假记录
+            </summary>
+            <param name="StudentID"></param>
+            <param name="stime"></param>
+            <param name="etime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.insertLeaveRecord(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            添加请假记录
+            </summary>
+            <returns>1表示添加成功,-1表示失败</returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.insertIntoAdvanceDelay(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            插入+更新，早出晚归
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.InsertWeekDays(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            插入周六日请假
+            </summary>
+            <returns>json</returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.SelectCountByCondition(System.String,System.String,System.String)">
+            <summary>
+            查询本周该学生是否未周六日请假
+            </summary>
+            <returns>json</returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.sendSMS(System.String)">
+            <summary>
+            发送短信
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.compStuContent(System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            生成短信信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.StudentLeaveController.MD5ToString(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="argString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.selectLeaveRecord(System.String,System.String,System.String)">
+            <summary>
+            查询请假信息数据表
+            </summary>
+            <returns>json</returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.updateLeaveRecord(System.String,System.String,System.String)">
+            <summary>
+            通过请假信息数据表
+            </summary>
+            <returns>json</returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.Notthrough(System.String)">
+            <summary>
+            不通过请假信息
+            </summary>
+            <returns>json</returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.WeekDayNow(System.String,System.String,System.String,System.String)">
+            <summary>
+            查询周末学生在校和离校情况;
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.Lr(System.String,System.String,System.String)">
+            <summary>
+            查询学生是否周末请假
+            </summary>
+            <param name="Student"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.TeacherAppr(System.String,System.String,System.String,System.String)">
+            <summary>
+            教师(班主任，辅导员)周末审核
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.getTeacherInfo">
+            <summary>
+            获取教师信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.updatePwd(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            更新教师密码
+            </summary>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.compStuContent(System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            生成短信信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.sendSMS(System.String)">
+            <summary>
+            发送短信
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:leaveAPI.Controllers.TeacherAuditController.MD5ToString(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="argString"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

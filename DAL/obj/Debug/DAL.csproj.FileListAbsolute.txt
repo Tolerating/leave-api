@@ -1,0 +1,64 @@
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI\DAL\bin\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI\DAL\bin\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI\DAL\bin\Debug\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI\DAL\bin\Debug\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI\DAL\obj\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI\DAL\obj\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI - 副本\DAL\bin\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI - 副本\DAL\bin\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI - 副本\DAL\bin\Debug\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI - 副本\DAL\bin\Debug\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI - 副本\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI - 副本\DAL\obj\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI - 副本\DAL\obj\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI仓库 - 副本\DAL\bin\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI仓库 - 副本\DAL\bin\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI仓库 - 副本\DAL\bin\Debug\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI仓库 - 副本\DAL\bin\Debug\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI仓库 - 副本\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI仓库 - 副本\DAL\obj\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveSystemAPI仓库 - 副本\DAL\obj\Debug\DAL.pdb
+G:\刘凯\LeaveAPI\DAL\bin\Debug\DAL.dll
+G:\刘凯\LeaveAPI\DAL\bin\Debug\DAL.pdb
+G:\刘凯\LeaveAPI\DAL\bin\Debug\Model.dll
+G:\刘凯\LeaveAPI\DAL\bin\Debug\Model.pdb
+G:\刘凯\LeaveAPI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\刘凯\LeaveAPI\DAL\obj\Debug\DAL.dll
+G:\刘凯\LeaveAPI\DAL\obj\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\obj\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\obj\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\bin\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\bin\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\bin\Debug\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\bin\Debug\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\LeaveAPI\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\bin\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\bin\Debug\DAL.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\bin\Debug\Model.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\bin\Debug\Model.pdb
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\obj\Debug\DAL.dll
+F:\我的\我的作品\温科院请假系统app\请假系统api试编写01\leaveAPP_API\DAL\obj\Debug\DAL.pdb
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\bin\Debug\DAL.dll
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\bin\Debug\DAL.pdb
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\bin\Debug\Model.dll
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\bin\Debug\Model.pdb
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\obj\Debug\DAL.dll
+C:\Users\刘凯\Desktop\毕业设计\leaveAPP_API\DAL\obj\Debug\DAL.pdb
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\bin\Debug\DAL.dll
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\bin\Debug\DAL.pdb
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\bin\Debug\Model.dll
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\bin\Debug\Model.pdb
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\obj\Debug\DAL.dll
+C:\Users\刘凯\Desktop\GraduationDesign\leaveAPP_API\DAL\obj\Debug\DAL.pdb
