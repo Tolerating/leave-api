@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using leaveAPI.Filters;
 using leaveAPI.Models;
 using Model;
@@ -28,7 +29,7 @@ namespace leaveAPI.Controllers
         [HttpGet]
         public string TeacherInfoAll()
         {
-            IList<Teachers> TeachersInfo = TeachersBLL.SelectAll();
+            IList<Teachers> TeachersInfo = TeachersBLL.SelectAllByCondition("IsDelete = 0");
             string strJson = "[";
             Class cla = new Class();
             Specialty spe = new Specialty();
@@ -105,7 +106,8 @@ namespace leaveAPI.Controllers
             }
             try
             {
-                int one = TeachersBLL.DeleteByTeacherID(Convert.ToInt32(TeacherID));
+                //int one = TeachersBLL.DeleteByTeacherID(Convert.ToInt32(TeacherID));
+                int one = tool.ExecuteNonQuery(string.Format("UPDATE [Teachers] SET IsDelete = 1 WHERE [TeacherID]={0};", TeacherID));
                 int two = AdminInfoBLL.DeleteByAdminID(admin.AdminID);
                 if (one + two > 1)
                 {
@@ -188,7 +190,7 @@ namespace leaveAPI.Controllers
         [HttpGet]
         public string StudentInfoAll(string College, string Specialty, string grade, string class1,string Sex)
         {
-            string addContidion = "WHERE ";
+            string addContidion = "WHERE";
             if (College != "0" && Specialty == "0" && grade != "0")     //按学院和年级查
             {
                 addContidion += string.Format("StudentClassID like '{0}'", College + "__" + grade + "_");
@@ -216,6 +218,14 @@ namespace leaveAPI.Controllers
             else if (College == "0" && Specialty == "0" && grade == "0" && class1 == "0")   //查询全部
             {
                 addContidion = "";
+            }
+
+            if (addContidion == "")
+            {
+                addContidion += "WHERE IsDelete = 0";
+            }
+            else {
+                addContidion += " and IsDelete = 0";
             }
             IList<Students> Students = StudentsBLL.SelectAllByCondition(addContidion);
             string strJson = "[";
@@ -257,7 +267,8 @@ namespace leaveAPI.Controllers
         public string DelectStudentone(string StudentNum)
         {
             Students stuone = StudentsBLL.getStuInfo(StudentNum);
-            int Res = StudentsBLL.DeleteByStudentID(stuone.StudentID);
+            //int Res = StudentsBLL.DeleteByStudentID(stuone.StudentID);
+            int Res = tool.ExecuteNonQuery(string.Format("UPDATE [Students] SET IsDelete = 1 WHERE [StudentNum]={0};", StudentNum));
             AdminInfo admin = AdminInfoBLL.SelectByAdminLoginID(Convert.ToInt32(stuone.StudentNum));
             Res += AdminInfoBLL.DeleteByAdminID(admin.AdminID);
             if (Res > 1)

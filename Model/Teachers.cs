@@ -16,7 +16,6 @@ namespace Model{
         /// </summary>
         public string TeacherNum { get; set; }
 
-        public string open_id { get; set; }
       	/// <summary>
         /// 教师密码
         /// </summary>
@@ -37,17 +36,9 @@ namespace Model{
         /// 职称
         /// </summary>
         public string Post { get; set; }
-      	/// <summary>
-        /// 学院id
-        /// </summary>
-        //public string TeacherCollegeNum { get; set; }
-      	/// <summary>
-        /// 专业id
-        /// </summary>
-        //public string TeacherSpecialtyNum { get; set; }
+      	
       	/// <summary>
         /// 身份证
-
         /// </summary>
         public string TeacherIDCard { get; set; }
       	/// <summary>
@@ -62,5 +53,10 @@ namespace Model{
         /// 审批时间
         /// </summary>
         public string TeacherApprovalTime { get; set; }
+
+        /// <summary>
+        /// 教师是否被删除,1表被删
+        /// </summary>
+        public int IsDelete { get; set; }
     }
 }

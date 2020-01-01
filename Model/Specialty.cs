@@ -29,5 +29,10 @@ namespace Model
         /// 辅导员ID
         /// </summary>
         public string TeacherNum { get; set; }
+
+        /// <summary>
+        /// 专业是否被删除,1表被删
+        /// </summary>
+        public int IsDelete { get; set; }
     }
 }

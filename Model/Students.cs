@@ -41,14 +41,7 @@ namespace Model{
         /// 学生班级ID
         /// </summary>
         public string StudentClassID { get; set; }
-      	/// <summary>
-        /// 学院id
-        /// </summary>
-        //public string StudentCollegeNum { get; set; }
-      	/// <summary>
-        /// 专业id
-        /// </summary>
-        //public string StudentSpecialtyNum { get; set; }
+      
       	/// <summary>
         /// 身份证
         /// </summary>
@@ -77,5 +70,10 @@ namespace Model{
         /// 审批时间
         /// </summary>
         public string StudentApprovalTime { get; set; }
+
+        /// <summary>
+        /// 学生是否被删除,1表被删
+        /// </summary>
+        public int IsDelete { get; set; }
     }
 }

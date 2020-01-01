@@ -974,7 +974,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// 查询所有教师的学号
+        /// 查询所有教师的工号
         /// </summary>
         /// <param name="strSql"></param>
         /// <returns></returns>

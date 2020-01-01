@@ -14,6 +14,8 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Script.Serialization;
 using leaveAPI.Content;
+using leaveAPI.Filters;
+using leaveAPI.Models;
 
 namespace leaveAPI.Controllers
 {
@@ -33,7 +35,7 @@ namespace leaveAPI.Controllers
         //[TokenCheck]
         public string selectStudentAll()
         {
-            IList<Students> student = StudentsBLL.SelectAll();
+            IList<Students> student = StudentsBLL.SelectAllByCondition("where IsDelete = 0");
             string strJson = "[";
             foreach (Students stu in student)
             {
@@ -60,9 +62,10 @@ namespace leaveAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        //[TokenCheck]
+        [TokenCheck]
         public List<int> importStu([FromBody] JObject Data)
         {
+            string adminName = User.Identity.Name.ToString();
             List<int> result = new List<int>();
             JavaScriptSerializer jss = new JavaScriptSerializer();
             string data = Data["Data"].ToString();
@@ -79,11 +82,11 @@ namespace leaveAPI.Controllers
             foreach (var item in students)
             {
                 int indexOf = studnetNum.IndexOf(Convert.ToInt32(item.StudentNum));
-                item.open_id = "1231";
                 item.StudentPass = Tool.MD5ToString(item.StudentPass);
                 item.StudentApprovalResult = "通过";
                 item.StudentApprovalTime = DateTime.Now.ToString();
-                item.StudentApprover = "刘凯";
+                item.StudentApprover = adminName;
+                item.IsDelete = 0;
                 if (indexOf != -1)
                 {
                     result.Add(Convert.ToInt32(item.StudentNum));
@@ -128,7 +131,7 @@ namespace leaveAPI.Controllers
             string strJson = "[";
             foreach (Teachers tea in teacher)
             {
-                strJson += "{\"TeacherNum\":\"" + tea.TeacherNum + "\",\"TeacherName\":\""
+                strJson += "{\"TeacherNum\":\"" + tea.TeacherNum.Substring(0,8) + "\",\"TeacherName\":\""
                     + tea.TeacherName + "\",\"Post\":\"" + tea.Post + "\",\"TeacherTel\":\""
                     + tea.TeacherTel + "\",\"TeacherApprovalResult\":\"" + tea.TeacherApprovalResult + "\"},";
             }
@@ -149,22 +152,24 @@ namespace leaveAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        //[TokenCheck]
+        [TokenCheck]
         public List<int> importTeacher([FromBody] JObject Data)
         {
+            string adminName = User.Identity.Name.ToString();
+            User.Identity.Name.ToString();
             List<int> result = new List<int>();
             JavaScriptSerializer jss = new JavaScriptSerializer();
             string data = Data["Data"].ToString();
-            //将学生数据转成IList
+            //将教师数据转成IList
             List<Teachers> teachers = jss.Deserialize<List<Teachers>>(data);
 
-            //存放已存在的学生信息
+            //存放已存在的教师信息
             List<Teachers> reInfo = new List<Teachers>();
 
-            //获取数据库中所有学生的学号
+            //获取数据库中所有教师的工号
             List<int> teacherNum = (List<int>)TeachersBLL.SelectTeacherNumAll();
 
-            //检查数据中的学号是否已经存在数据库中
+            //检查数据中的工号是否已经存在数据库中
             foreach (var item in teachers)
             {
                 string post = item.Post;
@@ -181,11 +186,11 @@ namespace leaveAPI.Controllers
                 {
                     item.TeacherNum = ID + "3";
                 }
-                item.open_id = "1231";
                 item.TeacherPass = Tool.MD5ToString(item.TeacherPass);
                 item.TeacherApprovalResult = "通过";
                 item.TeacherApprovalTime = DateTime.Now.ToString();
-                item.TeacherApprover = "刘凯";
+                item.TeacherApprover = adminName;
+                item.IsDelete = 0;
                 int indexOf = teacherNum.IndexOf(Convert.ToInt32(item.TeacherNum));
                 if (indexOf != -1)
                 {
@@ -257,7 +262,6 @@ namespace leaveAPI.Controllers
             DataTable dt = new DataTable();
             dt.Columns.Add("StudentID", typeof(int));
             dt.Columns.Add("StudentNum", typeof(string));
-            dt.Columns.Add("open_id", typeof(string));
             dt.Columns.Add("StudentPass", typeof(string));
             dt.Columns.Add("StudentName", typeof(string));
             dt.Columns.Add("StudentSex", typeof(string));
@@ -270,24 +274,25 @@ namespace leaveAPI.Controllers
             dt.Columns.Add("StudentApprover", typeof(string));
             dt.Columns.Add("StudentApprovalResult", typeof(string));
             dt.Columns.Add("StudentApprovalTime", typeof(string));
+            dt.Columns.Add("IsDelete", typeof(int));
             foreach (var item in list)
             {
                 DataRow newRow = dt.NewRow();
                 newRow[0] = item.StudentID;
                 newRow[1] = item.StudentNum;
-                newRow[2] = item.open_id;
-                newRow[3] = item.StudentPass;
-                newRow[4] = item.StudentName;
-                newRow[5] = item.StudentSex;
-                newRow[6] = item.StudentTel;
-                newRow[7] = item.StudentClassID;
-                newRow[8] = item.StudentIDCard;
-                newRow[9] = item.StudentBedroomNum;
-                newRow[10] = item.StudentParentTel;
-                newRow[11] = item.StudentHomeAddress;
-                newRow[12] = item.StudentApprover;
-                newRow[13] = item.StudentApprovalResult;
-                newRow[14] = item.StudentApprovalTime;
+                newRow[2] = item.StudentPass;
+                newRow[3] = item.StudentName;
+                newRow[4] = item.StudentSex;
+                newRow[5] = item.StudentTel;
+                newRow[6] = item.StudentClassID;
+                newRow[7] = item.StudentIDCard;
+                newRow[8] = item.StudentBedroomNum;
+                newRow[9] = item.StudentParentTel;
+                newRow[10] = item.StudentHomeAddress;
+                newRow[11] = item.StudentApprover;
+                newRow[12] = item.StudentApprovalResult;
+                newRow[13] = item.StudentApprovalTime;
+                newRow[14] = item.IsDelete;
                 dt.Rows.Add(newRow);
             }
             return dt;
@@ -303,7 +308,6 @@ namespace leaveAPI.Controllers
             DataTable dt = new DataTable();
             dt.Columns.Add("TeacherID", typeof(int));
             dt.Columns.Add("TeacherNum", typeof(string));
-            dt.Columns.Add("open_id", typeof(string));
             dt.Columns.Add("TeacherPass", typeof(string));
             dt.Columns.Add("TeacherName", typeof(string));
             dt.Columns.Add("TeacherSex", typeof(string));
@@ -313,21 +317,22 @@ namespace leaveAPI.Controllers
             dt.Columns.Add("TeacherApprover", typeof(string));
             dt.Columns.Add("TeacherApprovalResult", typeof(string));
             dt.Columns.Add("TeacherApprovalTime", typeof(string));
+            dt.Columns.Add("IsDelete", typeof(int));
             foreach (var item in list)
             {
                 DataRow newRow = dt.NewRow();
                 newRow[0] = item.TeacherID;
                 newRow[1] = item.TeacherNum;
-                newRow[2] = item.open_id;
-                newRow[3] = item.TeacherPass;
-                newRow[4] = item.TeacherName;
-                newRow[5] = item.TeacherSex;
-                newRow[6] = item.TeacherTel;
-                newRow[7] = item.Post;
-                newRow[8] = item.TeacherIDCard;
-                newRow[9] = item.TeacherApprover;
-                newRow[10] = item.TeacherApprovalResult;
-                newRow[11] = item.TeacherApprovalTime;
+                newRow[2] = item.TeacherPass;
+                newRow[3] = item.TeacherName;
+                newRow[4] = item.TeacherSex;
+                newRow[5] = item.TeacherTel;
+                newRow[6] = item.Post;
+                newRow[7] = item.TeacherIDCard;
+                newRow[8] = item.TeacherApprover;
+                newRow[9] = item.TeacherApprovalResult;
+                newRow[10] = item.TeacherApprovalTime;
+                newRow[11] = item.IsDelete;
                 dt.Rows.Add(newRow);
             }
             return dt;

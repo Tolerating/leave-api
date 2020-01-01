@@ -135,7 +135,7 @@
             </summary>
             <returns>json</returns>
         </member>
-        <member name="M:leaveAPI.Controllers.BelongManagementController.deleteSpecialty(System.Int32)">
+        <member name="M:leaveAPI.Controllers.BelongManagementController.deleteSpecialty(System.Int32,System.Int32)">
             <summary>
             删除专业
             </summary>
@@ -164,7 +164,7 @@
             <summary>
             删除学院
             </summary>
-            <param name="CollegeNum"></param>
+            <param name="CollegeNum">学院ID</param>
             <returns></returns>
         </member>
         <member name="M:leaveAPI.Controllers.BelongManagementController.CollegeBossInfo">

@@ -384,7 +384,7 @@ namespace DAL
         /// <returns></returns>
         public static IList<Specialty> SelectAll()
         {
-            string strSql = "SELECT * FROM [Specialty];";
+            string strSql = "SELECT * FROM [Specialty] order by SpecialtyNum;";
             return SelectAllBySql(strSql);
         }
         /// <summary>

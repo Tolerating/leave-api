@@ -33,5 +33,10 @@ namespace Model{
         /// 班级辅导员ID
         /// </summary>
         public int ClassSpecialityTeacherID { get; set; }
+
+        /// <summary>
+        /// 班级是否被删除,1表被删
+        /// </summary>
+        public int IsDelete { get; set; }
     }
 }

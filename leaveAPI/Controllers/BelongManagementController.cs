@@ -33,7 +33,7 @@ namespace leaveAPI.Controllers
         {
             string strJson = "";
             strJson = "[";
-            JArray clas = JArray.Parse(Helper.ObjToJson<List<Class>>(ClassBLL.SelectAll() as List<Class>));
+            JArray clas = JArray.Parse(Helper.ObjToJson<List<Class>>(ClassBLL.SelectAllByCondition("IsDelete = 0") as List<Class>));
             foreach (JToken item in clas)
             {
                 Teachers classTeacher = TeachersBLL.SelectTeaPhone(item["ClassHeadTeacherID"].ToString());
@@ -75,7 +75,7 @@ namespace leaveAPI.Controllers
         [HttpGet]
         public int deleteClass(int ClassID)
         {
-            return tool.ExecuteNonQuery(string.Format("DELETE FROM [Class] WHERE ClassID={0};", ClassID));
+            return tool.ExecuteNonQuery(string.Format("UPDATE [Class] SET IsDelete = 1 WHERE [ClassID]={0};", ClassID));
         }
 
 
@@ -169,6 +169,7 @@ namespace leaveAPI.Controllers
                         Cla.ClassSpecialityID = (int)obj["ClassSpecialityID"];
                         Cla.ClassNum = obj["ClassNum"].ToString();
                         Cla.ClassSpecialityTeacherID = Convert.ToInt32(obj["speTeacherID"]);
+                        Cla.IsDelete = 0;
                         if (ClassBLL.Insert(Cla) == 1)
                         {
                             re = 1;
@@ -257,7 +258,7 @@ namespace leaveAPI.Controllers
         {
             string strJson = "";
             strJson = "[";
-            JArray spes = JArray.Parse(Helper.ObjToJson<List<Specialty>>(SpecialtyBLL.SelectAll() as List<Specialty>));
+            JArray spes = JArray.Parse(Helper.ObjToJson<List<Specialty>>(SpecialtyBLL.SelectAllByCondition("IsDelete = 0") as List<Specialty>));
             foreach (JToken item in spes)
             {
                 College col = CollegeBLL.SelectALLbyCollegeNum(item["SpecialtyCollegeID"].ToString());
@@ -290,9 +291,14 @@ namespace leaveAPI.Controllers
         /// </summary>
         /// <returns>json</returns>
         [HttpGet]
-        public int deleteSpecialty(int SpecialtyID)
+        public int deleteSpecialty(int SpecialtyID,int SpecialtyNum)
         {
-            return tool.ExecuteNonQuery(string.Format("DELETE FROM [Specialty] WHERE SpecialtyID={0};", SpecialtyID));
+            Class cla = ClassBLL.SelectByClassSpecialityID(SpecialtyNum);
+            if (cla.ClassName != null)
+            {
+                return -1;
+            }
+            return tool.ExecuteNonQuery(string.Format("UPDATE [Specialty] SET IsDelete = 1 WHERE [SpecialtyID]={0};", SpecialtyID));
         }
 
 
@@ -320,6 +326,7 @@ namespace leaveAPI.Controllers
                 specialtyTwo.SpecialtyName = ClassSpecialityName;
                 specialtyTwo.SpecialtyCollegeID = Convert.ToInt32(collegeID);
                 specialtyTwo.SpecialtyNum = (collegeID + ClassSpecialityID);
+                specialtyTwo.IsDelete = 0;
                 int i = SpecialtyBLL.Insert(specialtyTwo);
                 if (i > 0)
                 {
@@ -359,7 +366,7 @@ namespace leaveAPI.Controllers
         [HttpGet]
         public string CollegeManagerInfo()
         {
-            IList<College> Colleges = CollegeBLL.SelectAll();
+            IList<College> Colleges = CollegeBLL.SelectAllByCondition("IsDelete = 0");
             string strJson = "[";
             foreach (College one in Colleges)
             {
@@ -418,7 +425,7 @@ namespace leaveAPI.Controllers
         /// <summary>
         /// 删除学院
         /// </summary>
-        /// <param name="CollegeNum"></param>
+        /// <param name="CollegeNum">学院ID</param>
         /// <returns></returns>
         [HttpGet]
         public string CollegeDelete(string CollegeNum)
@@ -437,14 +444,15 @@ namespace leaveAPI.Controllers
                 }
                 else
                 {
-                    int I = CollegeBLL.DeleteByCollegeID(Convert.ToInt32(CollegeNum));
+                    //int I = CollegeBLL.DeleteByCollegeID(Convert.ToInt32(CollegeNum));
+                    int I = tool.ExecuteNonQuery(string.Format("UPDATE [College] SET IsDelete = 1 WHERE [CollegeID]={0};", CollegeNum));
                     if (I > 0)
                     {
                         return "1";
                     }
                     else
                     {
-                        return "0";
+                        return "-1";
                     }
                 }
             }

@@ -28,5 +28,10 @@ namespace Model
         /// 院领导ID
         /// </summary>
         public string TeacherNum { get; set; }
+
+        /// <summary>
+        /// 学院是否被删除,1表被删
+        /// </summary>
+        public int IsDelete { get; set; }
     }
 }
